@@ -1,25 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+
 import './App.css';
+import ExtendedTable from './routes/ExtendedTable';
+import Forms from './routes/Forms';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-bootstrap-table2-filter/dist/react-bootstrap-table2-filter.min.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Redirect from="/" to="/tables" exact />
+        <Route component={ExtendedTable} path="/tables/" />
+        <Route component={Forms} path="/forms" />
+      </Switch>
+    </Router>
+
   );
 }
 
