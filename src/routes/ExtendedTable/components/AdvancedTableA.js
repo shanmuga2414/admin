@@ -298,7 +298,7 @@ export class AdvancedTableA extends React.Component {
                                 pagination={paginationDef}
                                 filter={filterFactory()}
                                 selectRow={selectRowConfig}
-                                bordered={false}
+                                bordered={true}
                                 responsive
                                 {...props.baseProps}
                             />
